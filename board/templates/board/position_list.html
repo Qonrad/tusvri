@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Positions</h1>
+<ul>
+{% for position in positions %}
+    <li><a href="{{ position.get_absolute_url }}">{{ position.title }}</a> - {{ position.description }}</li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}
