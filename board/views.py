@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.utils import timezone
+from django.views import generic
 
 # Create your views here.
 from django.http import HttpResponse
@@ -27,3 +28,5 @@ class BoardListView(ListView):
         context['now'] = timezone.now()
         return context
 
+class PositionDetailView(generic.DetailView):
+    model = Position
